@@ -3,4 +3,5 @@ this is third line
 
 this is second file
 this is stash code
-
+ 
+this is another stash code
