@@ -1,0 +1,21 @@
+name: Deploy to S3
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers on pushes to tags starting with 'v'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1 # Replace with your desired AWS region
+    - name: Sync files to S3
+      run: aws s3 sync build/ s3://testdevopscodewithdiversity --delete # Adjust 'build/' if your static files are in a different directory
