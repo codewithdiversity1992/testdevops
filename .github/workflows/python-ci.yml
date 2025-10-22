@@ -20,4 +20,4 @@ jobs:
     - name: Install Pytest
       run: pip install pytest
     - name: Run tests with pytest
-      run: pytest sample_app/tests
+      run: pytest --cov=project/ tests/unit_tests/ -v
