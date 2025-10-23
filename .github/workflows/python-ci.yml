@@ -16,10 +16,6 @@ jobs:
       with:
         python-version: '3.12'
         architecture: x64
-        check-latest: true
-        update-environment: true
-        allow-prereleases: false
-        freethreaded: false
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Install Pytest
