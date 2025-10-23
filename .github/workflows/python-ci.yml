@@ -11,11 +11,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.9
+    - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
-        python-version: '3.9'
+        python-version: '3.12'
         architecture: x64
+        check-latest: true
+        update-environment: true
+        allow-prereleases: false
+        freethreaded: false
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Install Pytest
