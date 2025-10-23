@@ -11,10 +11,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.14.0
-      uses: actions/setup-python@v5
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
       with:
-        python-version: '3.14.0'
+        python-version: "3.8.16"
+        architecture: x64
+    - env:
+            AGENT_TOOLSDIRECTORY: /opt/github/actions-runner/_work/_tool/Python/3.8.16/x64
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Install Pytest
