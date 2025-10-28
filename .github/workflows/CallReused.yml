@@ -1,0 +1,8 @@
+name: Call Reused Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reused.yml
