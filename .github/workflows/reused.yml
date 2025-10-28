@@ -1,0 +1,13 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.0
+    - name: Run reusable build steps
+      run: echo 'this is reused workflow'
